@@ -1,6 +1,21 @@
 <section id="how-it-works" class="py-24" style="background-color: #F8F9FA;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20" x-data="{
+            activeStep: 1,
+            updateStep() {
+                const section = document.getElementById('how-it-works');
+                const sectionTop = section.offsetTop;
+                const scrollPos = window.scrollY;
+                const relativeScroll = scrollPos - sectionTop;
+                const cardHeight = window.innerHeight * 0.6; // 60vh
+
+                if (relativeScroll < cardHeight) this.activeStep = 1;
+                else if (relativeScroll < cardHeight * 2) this.activeStep = 2;
+                else if (relativeScroll < cardHeight * 3) this.activeStep = 3;
+                else if (relativeScroll < cardHeight * 4) this.activeStep = 4;
+                else this.activeStep = 5;
+            }
+        }" @scroll.window="updateStep()">
             <!-- Left: Sticky Navigation -->
             <div class="lg:sticky lg:top-24 h-fit">
                 <p class="text-sm font-medium text-orange-600 uppercase tracking-wider mb-4">Hoe het werkt</p>
@@ -13,25 +28,25 @@
 
                 <!-- Step Navigation -->
                 <div class="space-y-3">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" style="background-color: #E36414;">1</div>
-                        <span class="text-slate-700 font-medium">Extract Agent</span>
+                    <div class="flex items-center gap-3" :class="activeStep === 1 ? '' : 'opacity-50'">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" :style="activeStep === 1 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'" :class="activeStep === 1 ? 'font-bold' : ''">1</div>
+                        <span class="text-slate-700" :class="activeStep === 1 ? 'font-bold text-black' : 'font-medium text-slate-600'">Extract Agent</span>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white bg-gray-300">2</div>
-                        <span class="text-slate-600 font-medium">Generate Agent</span>
+                    <div class="flex items-center gap-3" :class="activeStep === 2 ? '' : 'opacity-50'">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" :style="activeStep === 2 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'" :class="activeStep === 2 ? 'font-bold' : ''">2</div>
+                        <span class="text-slate-700" :class="activeStep === 2 ? 'font-bold text-black' : 'font-medium text-slate-600'">Generate Agent</span>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white bg-gray-300">3</div>
-                        <span class="text-slate-600 font-medium">Quality Agent</span>
+                    <div class="flex items-center gap-3" :class="activeStep === 3 ? '' : 'opacity-50'">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" :style="activeStep === 3 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'" :class="activeStep === 3 ? 'font-bold' : ''">3</div>
+                        <span class="text-slate-700" :class="activeStep === 3 ? 'font-bold text-black' : 'font-medium text-slate-600'">Quality Agent</span>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white bg-gray-300">4</div>
-                        <span class="text-slate-600 font-medium">Validate Agent</span>
+                    <div class="flex items-center gap-3" :class="activeStep === 4 ? '' : 'opacity-50'">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" :style="activeStep === 4 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'" :class="activeStep === 4 ? 'font-bold' : ''">4</div>
+                        <span class="text-slate-700" :class="activeStep === 4 ? 'font-bold text-black' : 'font-medium text-slate-600'">Validate Agent</span>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white bg-gray-300">5</div>
-                        <span class="text-slate-600 font-medium">Translate Agent</span>
+                    <div class="flex items-center gap-3" :class="activeStep === 5 ? '' : 'opacity-50'">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" :style="activeStep === 5 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'" :class="activeStep === 5 ? 'font-bold' : ''">5</div>
+                        <span class="text-slate-700" :class="activeStep === 5 ? 'font-bold text-black' : 'font-medium text-slate-600'">Translate Agent</span>
                     </div>
                 </div>
             </div>
