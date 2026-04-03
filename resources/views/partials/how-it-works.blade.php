@@ -50,8 +50,8 @@
 
             <!-- Right: Stacking Cards -->
             <div>
-                <div class="sticky top-24 z-10" style="padding-bottom: 30px;" data-step="1">
-                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg">
+                <div class="sticky top-24 z-10" data-step="1">
+                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg h-72">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white text-lg" style="background-color: #E36414;">1</div>
                             <p class="text-sm font-medium text-orange-600 uppercase tracking-wider">Stap 1</p>
@@ -60,9 +60,10 @@
                         <p class="text-slate-600 leading-relaxed">Leest en parseert je inkoopbestand en leveranciersdata. Herkent automatisch producten, specificaties en prijzen uit verschillende formaten.</p>
                     </div>
                 </div>
+                <div style="height: 30px;"></div>
 
-                <div class="sticky top-24 z-20" style="padding-bottom: 30px;" data-step="2">
-                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg">
+                <div class="sticky top-24 z-20" data-step="2">
+                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg h-72">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white text-lg" style="background-color: #E36414;">2</div>
                             <p class="text-sm font-medium text-orange-600 uppercase tracking-wider">Stap 2</p>
@@ -71,9 +72,10 @@
                         <p class="text-slate-600 leading-relaxed">Schrijft unieke, overtuigende productomschrijvingen met jouw tone of voice en branding. Incorporeert automatisch SEO-keywords.</p>
                     </div>
                 </div>
+                <div style="height: 30px;"></div>
 
-                <div class="sticky top-24 z-30" style="padding-bottom: 30px;" data-step="3">
-                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg">
+                <div class="sticky top-24 z-30" data-step="3">
+                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg h-72">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white text-lg" style="background-color: #E36414;">3</div>
                             <p class="text-sm font-medium text-orange-600 uppercase tracking-wider">Stap 3</p>
@@ -82,9 +84,10 @@
                         <p class="text-slate-600 leading-relaxed">Controleert grammatica, leesbaarheid, consistentie en naleving van je richtlijnen. Zorgt voor professionele kwaliteit.</p>
                     </div>
                 </div>
+                <div style="height: 30px;"></div>
 
-                <div class="sticky top-24 z-40" style="padding-bottom: 30px;" data-step="4">
-                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg">
+                <div class="sticky top-24 z-40" data-step="4">
+                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg h-72">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white text-lg" style="background-color: #E36414;">4</div>
                             <p class="text-sm font-medium text-orange-600 uppercase tracking-wider">Stap 4</p>
@@ -93,9 +96,10 @@
                         <p class="text-slate-600 leading-relaxed">Toetst SEO-score, optimaliseert keywords voor zoekmachines en genereert HTML gereed voor rechtstreekse upload.</p>
                     </div>
                 </div>
+                <div style="height: 30px;"></div>
 
                 <div class="sticky top-24 z-50" data-step="5">
-                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg">
+                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg h-72">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white text-lg" style="background-color: #E36414;">5</div>
                             <p class="text-sm font-medium text-orange-600 uppercase tracking-wider">Stap 5</p>
