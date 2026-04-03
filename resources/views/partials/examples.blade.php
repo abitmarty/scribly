@@ -28,7 +28,7 @@
                 <!-- Before -->
                 <div class="bg-white border-2 border-gray-300 rounded-xl p-6">
                     <h3 class="font-display text-lg font-bold text-gray-700 mb-4">Inkoopbestand (Leverancier)</h3>
-                    <div class="space-y-3 text-sm text-gray-700 font-mono bg-gray-50 p-4 rounded border border-gray-300 max-h-64 overflow-y-auto">
+                    <div class="space-y-3 text-sm text-gray-700 font-mono bg-gray-50 p-4 rounded border border-gray-300">
                         <p>SKU: ALP-001</p>
                         <p>Naam: Bergschoen Unisex</p>
                         <p>Materiaal: Leather, Mesh</p>
@@ -45,7 +45,7 @@
                 <!-- After -->
                 <div class="rounded-xl p-6" style="background-color: rgba(227, 100, 20, 0.1); border: 2px solid #E36414;">
                     <h3 class="font-display text-lg font-bold text-black mb-4">✅ Scribly Output (Optimized)</h3>
-                    <div class="space-y-3 text-sm text-slate-700 bg-white p-4 rounded max-h-64 overflow-y-auto" style="border: 1px solid #E36414;">
+                    <div class="space-y-3 text-sm text-slate-700 bg-white p-4 rounded" style="border: 1px solid #E36414;">
                         <h4 class="font-bold text-lg">Premium Bergschoenen met Gore-Tex</h4>
                         <p>Ontdek onze hoogwaardige bergschoenen — dé perfecte partner voor je bergavonturen. Waterproof, comfortabel en uiterst duurzaam.</p>
                         <ul class="list-disc list-inside space-y-1 ml-2">
@@ -65,7 +65,7 @@
                 <!-- Before -->
                 <div class="bg-white border-2 border-gray-300 rounded-xl p-6">
                     <h3 class="font-display text-lg font-bold text-gray-700 mb-4">Inkoopbestand (Leverancier)</h3>
-                    <div class="space-y-3 text-sm text-gray-700 font-mono bg-gray-50 p-4 rounded border border-gray-300 max-h-64 overflow-y-auto">
+                    <div class="space-y-3 text-sm text-gray-700 font-mono bg-gray-50 p-4 rounded border border-gray-300">
                         <p>SKU: SHIRT-055</p>
                         <p>Naam: Tech Shirt Men</p>
                         <p>Material: Polyester 90%, Elastane 10%</p>
@@ -81,7 +81,7 @@
                 <!-- After -->
                 <div class="rounded-xl p-6" style="background-color: rgba(227, 100, 20, 0.1); border: 2px solid #E36414;">
                     <h3 class="font-display text-lg font-bold text-black mb-4">✅ Scribly Output (Optimized)</h3>
-                    <div class="space-y-3 text-sm text-slate-700 bg-white p-4 rounded max-h-64 overflow-y-auto" style="border: 1px solid #E36414;">
+                    <div class="space-y-3 text-sm text-slate-700 bg-white p-4 rounded" style="border: 1px solid #E36414;">
                         <h4 class="font-bold text-lg">Tech Sportshirt – Antimicrobe & UV-Bescherming</h4>
                         <p>Comfort en prestatie hand in hand. Dit tech-shirt is speciaal ontworpen voor actieve atleten die graag droog en fris willen blijven.</p>
                         <ul class="list-disc list-inside space-y-1 ml-2">
@@ -101,7 +101,7 @@
                 <!-- Before -->
                 <div class="bg-white border-2 border-gray-300 rounded-xl p-6">
                     <h3 class="font-display text-lg font-bold text-gray-700 mb-4">Inkoopbestand (Leverancier)</h3>
-                    <div class="space-y-3 text-sm text-gray-700 font-mono bg-gray-50 p-4 rounded border border-gray-300 max-h-64 overflow-y-auto">
+                    <div class="space-y-3 text-sm text-gray-700 font-mono bg-gray-50 p-4 rounded border border-gray-300">
                         <p>SKU: BAG-20L</p>
                         <p>Naam: Daypack 20L</p>
                         <p>Capacity: 20L</p>
@@ -117,7 +117,7 @@
                 <!-- After -->
                 <div class="rounded-xl p-6" style="background-color: rgba(227, 100, 20, 0.1); border: 2px solid #E36414;">
                     <h3 class="font-display text-lg font-bold text-black mb-4">✅ Scribly Output (Optimized)</h3>
-                    <div class="space-y-3 text-sm text-slate-700 bg-white p-4 rounded max-h-64 overflow-y-auto" style="border: 1px solid #E36414;">
+                    <div class="space-y-3 text-sm text-slate-700 bg-white p-4 rounded" style="border: 1px solid #E36414;">
                         <h4 class="font-bold text-lg">20L Daypack – Duurzaam & Waterdicht</h4>
                         <p>Jouw ideale dagelijkse reisgenoot. Deze 20-liter rugzak combineert functionaliteit, stijl en duurzaamheid in één compact formaat.</p>
                         <ul class="list-disc list-inside space-y-1 ml-2">

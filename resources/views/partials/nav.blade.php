@@ -3,8 +3,8 @@
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex-shrink-0">
-                <a href="/" :class="scrolled ? 'text-black' : 'text-black'" class="text-xl font-display font-bold transition">
-                    Scribly
+                <a href="/" class="flex items-center space-x-1 transition">
+                    <span class="font-display font-bold text-black text-3xl">Scribly</span>
                 </a>
             </div>
 

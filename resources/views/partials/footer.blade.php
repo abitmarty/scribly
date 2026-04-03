@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-gray-300">
             <!-- Brand -->
             <div>
-                <h3 class="font-display text-xl font-bold text-black mb-3">Scribly</h3>
+                <img src="{{ asset('images/Het buro icon.png') }}" alt="Scribly" class="h-10 mb-3">
                 <p class="text-sm text-gray-700 mb-4">
                     AI-aangedreven productomschrijvingen voor webshops.
                 </p>
