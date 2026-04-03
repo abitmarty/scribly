@@ -1,4 +1,4 @@
-<section id="how-it-works" class="py-24" style="background-color: #F8F9FA;">
+<section id="how-it-works" class="py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20" x-data="{
             activeStep: 1,
