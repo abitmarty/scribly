@@ -6,7 +6,7 @@
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <!-- Left Column -->
             <div>
                 <!-- Badge -->
@@ -49,7 +49,27 @@
             </div>
 
             <!-- Right Column - Pipeline Mockup -->
-            <div class="relative hidden lg:block">
+            <div class="relative hidden lg:block flex justify-center" x-data="{ activeStep: 1, completed: [], progress: 0 }" x-init="
+                setInterval(() => {
+                    if (activeStep < 5) {
+                        completed.push(activeStep);
+                        activeStep++;
+                        progress = 0;
+                    } else {
+                        completed.push(5);
+                        setTimeout(() => {
+                            activeStep = 1;
+                            completed = [];
+                            progress = 0;
+                        }, 1200);
+                    }
+                }, 3500);
+                setInterval(() => {
+                    if (activeStep <= 5 && progress < 95) {
+                        progress += Math.random() * 25;
+                    }
+                }, 400);
+            ">
                 <div class="relative bg-gray-50 rounded-2xl border border-gray-200 p-8">
                     <!-- Terminal-like header -->
                     <div class="flex items-center space-x-2 mb-6 pb-4 border-b border-gray-300">
@@ -62,68 +82,80 @@
                     <!-- Pipeline steps -->
                     <div class="space-y-6">
                         <!-- Step 1 - Input (Orange) -->
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #E36414; background-color: rgba(227, 100, 20, 0.1);">
-                                <span class="text-sm font-semibold" style="color: #E36414;">1</span>
+                        <div class="flex items-start space-x-4" :class="activeStep >= 1 ? '' : 'opacity-60'" @click="activeStep = 1; completed = []">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all" :style="activeStep >= 1 ? 'background-color: rgba(227, 100, 20, 0.2); color: #E36414;' : 'background-color: rgba(200, 200, 200, 0.2); color: #999;'">
+                                <span class="text-sm font-semibold">1</span>
                             </div>
                             <div class="flex-1">
-                                <p class="text-sm font-medium text-gray-900">Inkoopbestand</p>
-                                <p class="text-xs text-gray-500">Je startpunt...</p>
+                                <p class="text-sm font-medium" :class="activeStep >= 1 ? 'text-gray-900' : 'text-gray-600'">Inkoopbestand</p>
+                                <p class="text-xs" :class="activeStep === 1 ? 'text-orange-600' : 'text-gray-500'" x-text="activeStep === 1 ? 'Parsing...' : 'Je startpunt...'"></p>
                                 <div class="mt-2 h-1 bg-gray-300 rounded-full overflow-hidden">
-                                    <div class="h-full w-full animate-pulse" style="background-color: #E36414;"></div>
+                                    <div class="h-full rounded-full transition-all duration-500" :style="`width: ${activeStep === 1 ? progress : (completed.includes(1) ? 100 : 0)}%; background-color: ${activeStep === 1 ? '#E36414' : (completed.includes(1) ? '#E36414' : '#CCCCCC')};`"></div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Step 2 -->
-                        <div class="flex items-start space-x-4 opacity-60">
-                            <div class="flex-shrink-0 w-8 h-8 bg-gray-300 rounded-lg flex items-center justify-center">
-                                <span class="text-sm font-semibold text-gray-600">2</span>
+                        <div class="flex items-start space-x-4 transition-opacity" :class="activeStep >= 2 ? 'opacity-100' : 'opacity-60'">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all" :style="activeStep >= 2 ? 'background-color: rgba(227, 100, 20, 0.2); color: #E36414;' : 'background-color: rgba(200, 200, 200, 0.2); color: #999;'">
+                                <span class="text-sm font-semibold">2</span>
                             </div>
                             <div class="flex-1">
-                                <p class="text-sm font-medium text-gray-800">Generate Agent</p>
-                                <p class="text-xs text-gray-600">Wachten...</p>
+                                <p class="text-sm font-medium" :class="activeStep >= 2 ? 'text-gray-900' : 'text-gray-600'">Generate Agent</p>
+                                <p class="text-xs" :class="activeStep === 2 ? 'text-orange-600' : 'text-gray-500'" x-text="activeStep === 2 ? 'Generating...' : 'Wachten...'"></p>
+                                <div class="mt-2 h-1 bg-gray-300 rounded-full overflow-hidden">
+                                    <div class="h-full rounded-full transition-all duration-500" :style="`width: ${activeStep === 2 ? progress : (completed.includes(2) ? 100 : 0)}%; background-color: ${activeStep === 2 ? '#E36414' : (completed.includes(2) ? '#E36414' : '#CCCCCC')};`"></div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Step 3 -->
-                        <div class="flex items-start space-x-4 opacity-60">
-                            <div class="flex-shrink-0 w-8 h-8 bg-gray-300 rounded-lg flex items-center justify-center">
-                                <span class="text-sm font-semibold text-gray-600">3</span>
+                        <div class="flex items-start space-x-4 transition-opacity" :class="activeStep >= 3 ? 'opacity-100' : 'opacity-60'">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all" :style="activeStep >= 3 ? 'background-color: rgba(227, 100, 20, 0.2); color: #E36414;' : 'background-color: rgba(200, 200, 200, 0.2); color: #999;'">
+                                <span class="text-sm font-semibold">3</span>
                             </div>
                             <div class="flex-1">
-                                <p class="text-sm font-medium text-gray-800">Quality Agent</p>
-                                <p class="text-xs text-gray-600">Wachten...</p>
+                                <p class="text-sm font-medium" :class="activeStep >= 3 ? 'text-gray-900' : 'text-gray-600'">Quality Agent</p>
+                                <p class="text-xs" :class="activeStep === 3 ? 'text-orange-600' : 'text-gray-500'" x-text="activeStep === 3 ? 'Checking...' : 'Wachten...'"></p>
+                                <div class="mt-2 h-1 bg-gray-300 rounded-full overflow-hidden">
+                                    <div class="h-full rounded-full transition-all duration-500" :style="`width: ${activeStep === 3 ? progress : (completed.includes(3) ? 100 : 0)}%; background-color: ${activeStep === 3 ? '#E36414' : (completed.includes(3) ? '#E36414' : '#CCCCCC')};`"></div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Step 4 -->
-                        <div class="flex items-start space-x-4 opacity-60">
-                            <div class="flex-shrink-0 w-8 h-8 bg-gray-300 rounded-lg flex items-center justify-center">
-                                <span class="text-sm font-semibold text-gray-600">4</span>
+                        <div class="flex items-start space-x-4 transition-opacity" :class="activeStep >= 4 ? 'opacity-100' : 'opacity-60'">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all" :style="activeStep >= 4 ? 'background-color: rgba(227, 100, 20, 0.2); color: #E36414;' : 'background-color: rgba(200, 200, 200, 0.2); color: #999;'">
+                                <span class="text-sm font-semibold">4</span>
                             </div>
                             <div class="flex-1">
-                                <p class="text-sm font-medium text-gray-800">Validate Agent</p>
-                                <p class="text-xs text-gray-600">Wachten...</p>
+                                <p class="text-sm font-medium" :class="activeStep >= 4 ? 'text-gray-900' : 'text-gray-600'">Validate Agent</p>
+                                <p class="text-xs" :class="activeStep === 4 ? 'text-orange-600' : 'text-gray-500'" x-text="activeStep === 4 ? 'Validating...' : 'Wachten...'"></p>
+                                <div class="mt-2 h-1 bg-gray-300 rounded-full overflow-hidden">
+                                    <div class="h-full rounded-full transition-all duration-500" :style="`width: ${activeStep === 4 ? progress : (completed.includes(4) ? 100 : 0)}%; background-color: ${activeStep === 4 ? '#E36414' : (completed.includes(4) ? '#E36414' : '#CCCCCC')};`"></div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Step 5 -->
-                        <div class="flex items-start space-x-4 opacity-60">
-                            <div class="flex-shrink-0 w-8 h-8 bg-gray-300 rounded-lg flex items-center justify-center">
-                                <span class="text-sm font-semibold text-gray-600">5</span>
+                        <div class="flex items-start space-x-4 transition-opacity" :class="activeStep >= 5 ? 'opacity-100' : 'opacity-60'">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all" :style="activeStep >= 5 ? 'background-color: rgba(227, 100, 20, 0.2); color: #E36414;' : 'background-color: rgba(200, 200, 200, 0.2); color: #999;'">
+                                <span class="text-sm font-semibold">5</span>
                             </div>
                             <div class="flex-1">
-                                <p class="text-sm font-medium text-gray-800">Translate Agent</p>
-                                <p class="text-xs text-gray-600">Wachten...</p>
+                                <p class="text-sm font-medium" :class="activeStep >= 5 ? 'text-gray-900' : 'text-gray-600'">Translate Agent</p>
+                                <p class="text-xs" :class="activeStep === 5 ? 'text-orange-600' : 'text-gray-500'" x-text="activeStep === 5 ? 'Translating...' : 'Wachten...'"></p>
+                                <div class="mt-2 h-1 bg-gray-300 rounded-full overflow-hidden">
+                                    <div class="h-full rounded-full transition-all duration-500" :style="`width: ${activeStep === 5 ? progress : (completed.includes(5) ? 100 : 0)}%; background-color: ${activeStep === 5 ? '#E36414' : (completed.includes(5) ? '#E36414' : '#CCCCCC')};`"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Status -->
                     <div class="mt-8 pt-6 border-t border-gray-300">
-                        <p class="text-xs text-gray-600">Processing 234 products...</p>
-                        <p class="text-xs mt-1" style="color: #E36414;">✓ 89 completed | ⧗ 145 in progress</p>
+                        <p class="text-xs text-gray-600" x-text="completed.length === 5 ? 'Completed' : 'Processing 234 products...'"></p>
+                        <p class="text-xs mt-1" style="color: #E36414;" x-text="`✓ ${completed.length} completed | ⧗ ${5 - completed.length} in progress`"></p>
                     </div>
                 </div>
             </div>
