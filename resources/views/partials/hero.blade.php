@@ -49,7 +49,7 @@
             </div>
 
             <!-- Right Column - Pipeline Mockup -->
-            <div class="relative hidden lg:block flex justify-center" x-data="{ activeStep: 1, completed: [], progress: 0 }" x-init="
+            <div class="relative hidden lg:block flex justify-center w-4/5 ml-auto" x-data="{ activeStep: 1, completed: [], progress: 0 }" x-init="
                 setInterval(() => {
                     if (activeStep < 5) {
                         completed.push(activeStep);
