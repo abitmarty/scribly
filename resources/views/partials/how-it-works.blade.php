@@ -3,19 +3,16 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20" x-data="{
             activeStep: 1,
             updateStep() {
-                const section = document.getElementById('how-it-works');
-                const sectionTop = section.offsetTop;
-                const scrollPos = window.scrollY;
-                const relativeScroll = scrollPos - sectionTop;
-                const cardHeight = window.innerHeight * 0.6; // 60vh
-
-                if (relativeScroll < cardHeight) this.activeStep = 1;
-                else if (relativeScroll < cardHeight * 2) this.activeStep = 2;
-                else if (relativeScroll < cardHeight * 3) this.activeStep = 3;
-                else if (relativeScroll < cardHeight * 4) this.activeStep = 4;
-                else this.activeStep = 5;
+                const wrappers = document.querySelectorAll('[data-step]');
+                wrappers.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top <= 120 && rect.bottom > 120) {
+                        this.activeStep = parseInt(el.dataset.step);
+                    }
+                });
             }
         }" @scroll.window="updateStep()">
+
             <!-- Left: Sticky Navigation -->
             <div class="lg:sticky lg:top-24 h-fit">
                 <p class="text-sm font-medium text-orange-600 uppercase tracking-wider mb-4">Hoe het werkt</p>
@@ -29,32 +26,32 @@
                 <!-- Step Navigation -->
                 <div class="space-y-3">
                     <div class="flex items-center gap-3" :class="activeStep === 1 ? '' : 'opacity-50'">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" :style="activeStep === 1 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'" :class="activeStep === 1 ? 'font-bold' : ''">1</div>
-                        <span class="text-slate-700" :class="activeStep === 1 ? 'font-bold text-black' : 'font-medium text-slate-600'">Extract Agent</span>
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white transition-all" :style="activeStep === 1 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'">1</div>
+                        <span class="transition-all" :class="activeStep === 1 ? 'font-bold text-black' : 'font-medium text-slate-600'">Extract Agent</span>
                     </div>
                     <div class="flex items-center gap-3" :class="activeStep === 2 ? '' : 'opacity-50'">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" :style="activeStep === 2 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'" :class="activeStep === 2 ? 'font-bold' : ''">2</div>
-                        <span class="text-slate-700" :class="activeStep === 2 ? 'font-bold text-black' : 'font-medium text-slate-600'">Generate Agent</span>
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white transition-all" :style="activeStep === 2 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'">2</div>
+                        <span class="transition-all" :class="activeStep === 2 ? 'font-bold text-black' : 'font-medium text-slate-600'">Generate Agent</span>
                     </div>
                     <div class="flex items-center gap-3" :class="activeStep === 3 ? '' : 'opacity-50'">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" :style="activeStep === 3 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'" :class="activeStep === 3 ? 'font-bold' : ''">3</div>
-                        <span class="text-slate-700" :class="activeStep === 3 ? 'font-bold text-black' : 'font-medium text-slate-600'">Quality Agent</span>
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white transition-all" :style="activeStep === 3 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'">3</div>
+                        <span class="transition-all" :class="activeStep === 3 ? 'font-bold text-black' : 'font-medium text-slate-600'">Quality Agent</span>
                     </div>
                     <div class="flex items-center gap-3" :class="activeStep === 4 ? '' : 'opacity-50'">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" :style="activeStep === 4 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'" :class="activeStep === 4 ? 'font-bold' : ''">4</div>
-                        <span class="text-slate-700" :class="activeStep === 4 ? 'font-bold text-black' : 'font-medium text-slate-600'">Validate Agent</span>
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white transition-all" :style="activeStep === 4 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'">4</div>
+                        <span class="transition-all" :class="activeStep === 4 ? 'font-bold text-black' : 'font-medium text-slate-600'">Validate Agent</span>
                     </div>
                     <div class="flex items-center gap-3" :class="activeStep === 5 ? '' : 'opacity-50'">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" :style="activeStep === 5 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'" :class="activeStep === 5 ? 'font-bold' : ''">5</div>
-                        <span class="text-slate-700" :class="activeStep === 5 ? 'font-bold text-black' : 'font-medium text-slate-600'">Translate Agent</span>
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white transition-all" :style="activeStep === 5 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'">5</div>
+                        <span class="transition-all" :class="activeStep === 5 ? 'font-bold text-black' : 'font-medium text-slate-600'">Translate Agent</span>
                     </div>
                 </div>
             </div>
 
             <!-- Right: Stacking Cards -->
             <div>
-                <div class="sticky top-24 z-10" style="height: 60vh;">
-                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg min-h-72">
+                <div class="sticky top-24 z-10" style="padding-bottom: 30px;" data-step="1">
+                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white text-lg" style="background-color: #E36414;">1</div>
                             <p class="text-sm font-medium text-orange-600 uppercase tracking-wider">Stap 1</p>
@@ -64,8 +61,8 @@
                     </div>
                 </div>
 
-                <div class="sticky top-24 z-20" style="height: 60vh;">
-                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg min-h-72">
+                <div class="sticky top-24 z-20" style="padding-bottom: 30px;" data-step="2">
+                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white text-lg" style="background-color: #E36414;">2</div>
                             <p class="text-sm font-medium text-orange-600 uppercase tracking-wider">Stap 2</p>
@@ -75,8 +72,8 @@
                     </div>
                 </div>
 
-                <div class="sticky top-24 z-30" style="height: 60vh;">
-                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg min-h-72">
+                <div class="sticky top-24 z-30" style="padding-bottom: 30px;" data-step="3">
+                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white text-lg" style="background-color: #E36414;">3</div>
                             <p class="text-sm font-medium text-orange-600 uppercase tracking-wider">Stap 3</p>
@@ -86,8 +83,8 @@
                     </div>
                 </div>
 
-                <div class="sticky top-24 z-40" style="height: 60vh;">
-                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg min-h-72">
+                <div class="sticky top-24 z-40" style="padding-bottom: 30px;" data-step="4">
+                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white text-lg" style="background-color: #E36414;">4</div>
                             <p class="text-sm font-medium text-orange-600 uppercase tracking-wider">Stap 4</p>
@@ -97,8 +94,8 @@
                     </div>
                 </div>
 
-                <div class="sticky top-24 z-50" style="height: 60vh;">
-                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg min-h-72">
+                <div class="sticky top-24 z-50" data-step="5">
+                    <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white text-lg" style="background-color: #E36414;">5</div>
                             <p class="text-sm font-medium text-orange-600 uppercase tracking-wider">Stap 5</p>
