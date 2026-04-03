@@ -24,7 +24,7 @@
                 </p>
 
                 <!-- Step Navigation -->
-                <div class="space-y-3">
+                <div class="space-y-3 hidden lg:block">
                     <div class="flex items-center gap-3" :class="activeStep === 1 ? '' : 'opacity-50'">
                         <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white transition-all" :style="activeStep === 1 ? 'background-color: #E36414;' : 'background-color: #D1D5DB;'">1</div>
                         <span class="transition-all" :class="activeStep === 1 ? 'font-bold text-black' : 'font-medium text-slate-600'">Extract Agent</span>
