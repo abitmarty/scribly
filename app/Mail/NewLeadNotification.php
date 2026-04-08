@@ -22,7 +22,7 @@ class NewLeadNotification extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: "Nieuwe Scribly aanvraag: {$this->lead->company ?? 'Geen bedrijf'}",
+            subject: "Nieuwe Scribly aanvraag: {($this->lead->company ?? 'Geen bedrijf')}",
         );
     }
 
