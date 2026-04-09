@@ -3,7 +3,8 @@
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex-shrink-0">
-                <a href="/" class="flex items-center space-x-1 transition">
+                <a href="/" class="flex items-center space-x-4 transition">
+                    <img src="{{ asset('images/Scribly logo vertical.png') }}" alt="Scribly" class="h-10 w-auto">
                     <span class="font-display font-bold text-black text-3xl">Scribly</span>
                 </a>
             </div>

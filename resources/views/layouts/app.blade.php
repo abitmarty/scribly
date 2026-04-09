@@ -32,7 +32,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -41,7 +41,7 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        display: ['"Barlow Condensed"', 'sans-serif'],
+                        display: ['"Playpen Sans"', 'sans-serif'],
                         body: ['Inter', 'sans-serif'],
                     },
                     colors: {
@@ -94,6 +94,13 @@
 
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:text-7xl {
+                font-size: 3.5rem !important;
+                line-height: 1.1 !important;
+            }
         }
     </style>
 
