@@ -12,7 +12,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Metric 1 -->
             <div class="text-center">
-                <div class="font-display text-5xl md:text-6xl font-bold text-black mb-2" style="color: #E36414;">
+                <div class="text-5xl md:text-6xl font-bold text-black mb-2" style="color: #E36414; font-family: Caveat, cursive;">
                     10-15x
                 </div>
                 <p class="text-gray-700 font-medium">Sneller dan handmatig</p>
@@ -21,7 +21,7 @@
 
             <!-- Metric 2 -->
             <div class="text-center">
-                <div class="font-display text-5xl md:text-6xl font-bold text-black mb-2" style="color: #E36414;">
+                <div class="text-5xl md:text-6xl font-bold text-black mb-2" style="color: #E36414; font-family: Caveat, cursive;">
                     +35%
                 </div>
                 <p class="text-gray-700 font-medium">Meer organisch traffic</p>
@@ -30,7 +30,7 @@
 
             <!-- Metric 3 -->
             <div class="text-center">
-                <div class="font-display text-5xl md:text-6xl font-bold text-black mb-2" style="color: #E36414;">
+                <div class="text-5xl md:text-6xl font-bold text-black mb-2" style="color: #E36414; font-family: Caveat, cursive;">
                     100%
                 </div>
                 <p class="text-gray-700 font-medium">Consistent</p>
@@ -39,7 +39,7 @@
 
             <!-- Metric 4 -->
             <div class="text-center">
-                <div class="font-display text-5xl md:text-6xl font-bold text-black mb-2" style="color: #E36414;">
+                <div class="text-5xl md:text-6xl font-bold text-black mb-2" style="color: #E36414; font-family: Caveat, cursive;">
                     24/7
                 </div>
                 <p class="text-gray-700 font-medium">Altijd beschikbaar</p>
