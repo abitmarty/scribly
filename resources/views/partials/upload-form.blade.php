@@ -77,10 +77,10 @@
                 <!-- Inkoopbestand -->
                 <div>
                     <label class="block text-sm font-medium text-slate-700 mb-2">
-                        Inkoopbestand (Aankoop) *
+                        Inkoopbestand (optioneel)
                     </label>
                     <div class="relative">
-                        <input type="file" id="inkoopbestand" name="inkoopbestand" required
+                        <input type="file" id="inkoopbestand" name="inkoopbestand"
                                @change="inkoopName = $event.target.files[0]?.name"
                                @dragover="inkoopDragging = true" @dragleave="inkoopDragging = false" @drop="inkoopDragging = false; handleFileDrop($event, 'inkoopbestand')"
                                accept=".csv,.xlsx,.xls,.txt"
@@ -105,10 +105,10 @@
                 <!-- Leverancierbestand -->
                 <div>
                     <label class="block text-sm font-medium text-slate-700 mb-2">
-                        Leverancierbestand (Supplier) *
+                        Leverancierbestand (optioneel)
                     </label>
                     <div class="relative">
-                        <input type="file" id="leverancierbestand" name="leverancierbestand" required
+                        <input type="file" id="leverancierbestand" name="leverancierbestand"
                                @change="leverancierName = $event.target.files[0]?.name"
                                @dragover="leverancierDragging = true" @dragleave="leverancierDragging = false" @drop="leverancierDragging = false; handleFileDrop($event, 'leverancierbestand')"
                                accept=".csv,.xlsx,.xls,.txt"

@@ -16,14 +16,14 @@
 
                 <!-- Headline -->
                 <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-black">
-                    Van <span style="color: #E36414;">inkoopbestand</span><br>
-                    naar perfecte<br>
-                    <span class="text-gray-600">productomschrijvingen.</span>
+                    Je wilt <span style="color: #E36414;">sneller</span><br>
+                    producten online zetten zonder<br>
+                    <span class="text-gray-600">handmatig schrijfwerk</span>
                 </h1>
 
                 <!-- Subheadline -->
                 <p class="text-lg text-gray-700 mb-8 max-w-md leading-relaxed">
-                    Verwerk honderden producten in minuten. SEO-geoptimaliseerd, meertalig en consistent. Geen handmatige copy-paste meer.
+                    Je wil sneller producten online zetten, zonder handmatig schrijfwerk. Scribly zet je productdata om in consistente teksten die je direct kunt controleren en publiceren.
                 </p>
 
                 <!-- CTA Buttons -->
