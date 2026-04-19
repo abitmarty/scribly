@@ -38,11 +38,18 @@ class NewLeadNotification extends Mailable
 
     public function attachments(): array
     {
-        return [
-            Attachment::fromStorageDisk('local', $this->lead->inkoopbestand_path)
-                ->as('inkoopbestand.' . pathinfo($this->lead->inkoopbestand_path, PATHINFO_EXTENSION)),
-            Attachment::fromStorageDisk('local', $this->lead->leverancierbestand_path)
-                ->as('leverancierbestand.' . pathinfo($this->lead->leverancierbestand_path, PATHINFO_EXTENSION)),
-        ];
+        $attachments = [];
+
+        if ($this->lead->inkoopbestand_path) {
+            $attachments[] = Attachment::fromStorageDisk('local', $this->lead->inkoopbestand_path)
+                ->as('inkoopbestand.' . pathinfo($this->lead->inkoopbestand_path, PATHINFO_EXTENSION));
+        }
+
+        if ($this->lead->leverancierbestand_path) {
+            $attachments[] = Attachment::fromStorageDisk('local', $this->lead->leverancierbestand_path)
+                ->as('leverancierbestand.' . pathinfo($this->lead->leverancierbestand_path, PATHINFO_EXTENSION));
+        }
+
+        return $attachments;
     }
 }
