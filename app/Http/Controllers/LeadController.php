@@ -23,11 +23,17 @@ class LeadController extends Controller
         $uuid = (string) Str::uuid();
         $uploadPath = "uploads/{$uuid}";
 
-        $inkoopPath = $request->file('inkoopbestand')
-            ->storeAs($uploadPath, 'inkoopbestand.' . $request->file('inkoopbestand')->getClientOriginalExtension());
+        $inkoopPath = null;
+        if ($request->hasFile('inkoopbestand')) {
+            $inkoopPath = $request->file('inkoopbestand')
+                ->storeAs($uploadPath, 'inkoopbestand.' . $request->file('inkoopbestand')->getClientOriginalExtension());
+        }
 
-        $leverancierPath = $request->file('leverancierbestand')
-            ->storeAs($uploadPath, 'leverancierbestand.' . $request->file('leverancierbestand')->getClientOriginalExtension());
+        $leverancierPath = null;
+        if ($request->hasFile('leverancierbestand')) {
+            $leverancierPath = $request->file('leverancierbestand')
+                ->storeAs($uploadPath, 'leverancierbestand.' . $request->file('leverancierbestand')->getClientOriginalExtension());
+        }
 
         $lead = Lead::create([
             'name'                    => $request->name,

@@ -25,8 +25,8 @@ class LeadSubmissionRequest extends FormRequest
             'name'                  => ['required', 'string', 'max:255'],
             'email'                 => ['required', 'email:rfc', 'max:255'],
             'company'               => ['nullable', 'string', 'max:255'],
-            'inkoopbestand'         => ['required', 'file', 'mimes:csv,xlsx,xls,txt', 'max:10240'],
-            'leverancierbestand'    => ['required', 'file', 'mimes:csv,xlsx,xls,txt', 'max:10240'],
+            'inkoopbestand'         => ['nullable', 'file', 'mimes:csv,xlsx,xls,txt', 'max:10240'],
+            'leverancierbestand'    => ['nullable', 'file', 'mimes:csv,xlsx,xls,txt', 'max:10240'],
             'message'               => ['nullable', 'string', 'max:1000'],
         ];
     }
